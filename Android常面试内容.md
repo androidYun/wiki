@@ -1,13 +1,32 @@
-# Android和java基础知识题目
+# Android和java基础知识题目和解决答案
 
 1.  java基本数据类型有哪些，int， long占几个字节
+
+int占用4个字节 long类型占用8个字节 其他数据类型字节是：
+ byte boolean 占用1 个字节
+ char 占有两个字节
+ int short fload 占用4个字节
+ double long 占用8个字节
     
 2.  == 和 equals有什么区别
+
+   == 1，如果是基本数据类型，那比较的是所储存的值 是否相等
+      2，如果是引用类型，比如集成与object的对象是比较的储存地址
+  equal 1，基本数据类型是没有equal这个方法，像integer 和string date  是对equal进行重写的 所以也是比较的是值，
+        2，对象也是比较的储存地址
+
     
 3.  hashcode 和 equals作用
+
+   hashcode:如果是通过对象地址生成的int类型的值，比如 string 和date这些类型不是根据内存地址生成的，是根据值生成的
+   equals：是比较两个对象或者数据是否相等
+   hashcode和equal是相辅相成的，equals 前面已经说了 如果是数据类型 或者string date 类型，对值就行比较，如果是其他对象直接对内存地址进行比较
+   但是equals 效率没有hashcode高，hashcode就是内存地址生成int值，如果hashcode不相等那么这两个值肯定不想等，如果hashcode相等在去比较equals
+   equals相等那么hashcode 一定相等。
     
 4.  new String创建了几个对象
-    
+    答： 1个或者两个 new String(“”)是创建一个对象，我们创建里面内容的时候会在String 常量池里面创建一个对象放在里面，如果常量池存在这个对象，那么
+    就不创建，所以1 或者2个
 5.  位运算符的一些计算
     
 6.  java的拆装箱
@@ -15,6 +34,8 @@
 7.  compareable 和 compartor的区别
     
 8.  ArrayList和LinkedList的区别，优缺点
+    答：ArrayList 是有数组储存的，增删改查当中 增 和查 速度比较快，删除和插入速度比较满
+    linkedList 是由链表组成 增加和删除速度都可以 但是读取速度比较慢！需要从上到下读取
     
 9.  hashmap实现，扩容是怎么做的，怎么处理hash冲突，hashcode算法等
     
